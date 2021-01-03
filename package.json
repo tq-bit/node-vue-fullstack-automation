@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+     "build-app": "git pull && npm run build-client && npm install && npm start",
+     "build-client": "mkdir public && cd client && npm run build-app && cd ..",
+     "start": "pm2 start app.js -n Vuetomate && pm2 monit",
   },
   "keywords": [],
   "author": "",
